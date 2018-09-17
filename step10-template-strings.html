@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Strings</title>
+    <style>
+        .box{
+            width: 250px;
+            height: 100px;
+            background-color: beige;
+            border: 2px solid burlywood;
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .box h1, h2{
+            margin: 0px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        .box input{
+            display: block;
+            width: 98%;
+        }
+    </style>
+    <script>
+        var data = [
+            { title : "Batman", fname : "Bruce", lname : "Wayne", power : 7},
+            { title : "Superman", fname : "Clark", lname : "Lent", power : 8},
+            { title : "Spiderman", fname : "Peter", lname : "Parker", power : 6},
+            { title : "Ironman", fname : "Tony", lname : "Stark", power : 8},
+            { title : "Phantom", fname : "Kit", lname : "Walker", power : 5}
+        ];
+        document.addEventListener("DOMContentLoaded", function(){
+            for(var i = 0 ; i < data.length; i++){
+               // document.getElementsByClassName("container")[0].innerHTML += '<div class="box"><h1>'+data[i].title+'</h1><h2> '+data[i].fname+' '+data[i].lname+'</h2><input type="range" min="0" max="10" value="'+data[i].power+'"></div>';
+                document.getElementsByClassName("container")[0].innerHTML += `
+                <div class="box">
+                    <h1>${data[i].title.toUpperCase()}</h1>
+                    <h2>${data[i].fname+" "+data[i].lname}</h2>
+                    <input type="range" min="0" max="10" value="${data[i].power}">
+                </div>
+                `
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

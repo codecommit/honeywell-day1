@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment</title>
+    <script>
+    /*
+    let cart = {
+        productPrice : function(){
+            return 100;
+        },
+        sellingPrice : function(){
+            let self = this;
+            let calculateProfit = function(){
+                return self.productPrice() * 0.2;
+            }
+            return this.productPrice()+calculateProfit();
+        }
+    }
+    console.log(cart.sellingPrice());//120
+    */
+    /*
+    let cart = {
+        productPrice : function(){
+            return 100;
+        },
+        sellingPrice : function(){
+            let calculateProfit = function(){
+                return this.productPrice() * 0.2;
+            }
+            return this.productPrice()+calculateProfit.call(this);
+            return this.productPrice()+calculateProfit.apply(this);
+            return this.productPrice()+calculateProfit.bind(this)();
+        }
+    }
+    console.log(cart.sellingPrice());//120
+    */
+    // window
+    let cart = {
+        productPrice : () => 100,
+        sellingPrice : function(){
+            let calculateProfit = ()=> this.productPrice() * 0.2;
+            return this.productPrice()+calculateProfit();
+        }
+    }
+    console.log(cart.sellingPrice());//120
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
