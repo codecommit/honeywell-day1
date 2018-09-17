@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        var hero = {
+            title : "Batman",
+            city : "Gotham",
+            power : 7
+        };
+        
+        var comichero = hero;
+        
+        console.log(comichero.title);// Batman
+        console.log(hero.title);// Batman
+        comichero.title = "Joker";
+        console.log(comichero.title);// Joker
+        console.log(hero.title);// ???
+      */
+      var hero = {
+            title : "Batman",
+            city : "Gotham",
+            power : 7,
+            movies : {
+                firstmovie : "Batman Begins",
+                secondmovie : "Dark Knight",
+                thirdmovie : "Dark Knight Raises"
+            }
+        };
+  //  let {title : htitle, city : hcity, power: hpower} = hero;
+  /*
+  let {title, city, power} = hero;
+  console.log(title, city, power);
+  */
+ 
+ let {title : htitle, city : hcity, power: hpower, movies: mvs, movies:{ firstmovie : fm, secondmovie : sm}} = hero;
+ console.log(htitle, hcity, hpower, fm, sm, mvs);
+
+
+ let movies = ["Batman Begins", "Dark Knight", "Dark Knight Raises"];
+ let [m1, m2, m3] = movies;
+ console.log(m1, m2, m3);
+ 
+ </script>
+</head>
+<body>
+    
+</body>
+</html>
