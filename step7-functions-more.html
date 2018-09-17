@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var batman = {
+            title : "Batman",
+            firstname : "Bruce",
+            lastname : "Wayne",
+            city : "Gotham",
+            fullname : function(greeting, power){
+                return greeting+" "+this.firstname+" "+this.lastname+" has power : "+power
+            }
+        };
+        var superman = {
+            title : "Superman",
+            firstname : "Clark",
+            lastname : "Kent",
+            city : "Metropolis"
+        };
+        var spiderman = {
+            title : "spiderman",
+            firstname : "Peter",
+            lastname : "Parker",
+            city : "New York"
+        };
+
+        console.log(batman.fullname.call(batman,"Hi",7));
+        console.log(batman.fullname.call(superman,"Hello", 8));
+        console.log(batman.fullname.call(spiderman, "Ola", 6));
+        console.log("+++++++++++++++++");
+        console.log(batman.fullname.apply(batman,["Hi",7]));
+        console.log(batman.fullname.apply(superman,["Hello", 8]));
+        console.log(batman.fullname.apply(spiderman,["Ola", 6]));
+        console.log("+++++++++++++++++");
+        console.log(batman.fullname.bind(batman)("Hi",7) );
+        console.log(batman.fullname.bind(superman)("Hello", 8) );
+        console.log(batman.fullname.bind(spiderman)("Ola", 6) );
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
