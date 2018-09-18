@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes</title>
+    <script>
+        /*
+                console.log( 5 == "5");// true
+                console.log( 5 === "5");// true
+        */
+        /*
+        var Hero = function(fn, ln){
+            this.firstname = fn;
+            this.lastname = ln;
+            var secret = "Hero's Secret";
+        };
+        Hero.prototype.fullname = function(){
+            return this.firstname+" "+this.lastname
+        };
+
+        var hero = new Hero("Bruce", "Wayne");
+        var comichero = new Hero("Peter", "Parker");
+        console.log(hero.fullname());
+        console.log(hero.firstname);
+        console.log(hero.secret);
+
+        console.log(comichero.fullname());
+
+        console.log( hero.fullname === comichero.fullname );
+        */
+        class Hero{
+            static city(){
+                return "Gotham"
+            }
+            constructor(fn, ln){
+                this.fname = fn;
+                this.lname = ln;
+                this._secret = 'heros secret';
+               //  var power = 7;
+            }
+            fullname(){
+                return this.fname+' '+this.lname;
+            }
+            /*
+            saypower(){
+                return this.power;
+            }
+            */
+            get secret(){
+                return this._secret
+            }
+            set secret(val){
+                this._secret = val;
+            }
+        };
+        var hero = new Hero('Peter', 'Parker');
+        console.log( Hero.city() );
+        console.log(hero.fullname());
+        // console.log(hero.saypower());
+        console.log(hero.secret);
+        hero.secret = 'top secret';
+        console.log(hero.secret);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
